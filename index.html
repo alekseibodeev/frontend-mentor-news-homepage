@@ -1,60 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | News homepage</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Home
-  New
-  Popular
-  Trending
-  Categories
-
-  The Bright Future of Web 3.0?
-
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
-
-  Read more
-
-  New 
-
-  Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
-
-  The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
-
-  Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
-
-  01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
-
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
-
-  03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Frontend Mentor | News homepage</title>
+    <script src="./index.js" defer></script>
+  </head>
+  <body class="page">
+    <div class="backdrop backdrop_hidden"></div>
+    <div class="page__layout">
+      <header class="page__header">
+        <nav class="nav">
+          <a href="#" class="nav__logo link">
+            <img src="./assets/images/logo.svg" alt="W. Logo" />
+          </a>
+          <button
+            aria-label="Open navigation"
+            class="button button_icon nav__open-button"
+          >
+            <svg width="40" height="17" xmlns="http://www.w3.org/2000/svg">
+              <g fill="currentColor" fill-rule="evenodd">
+                <path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z" />
+                <path d="M0 0h40v3H0z" />
+              </g>
+            </svg>
+          </button>
+          <div class="nav__menu nav__menu_hidden">
+            <button
+              aria-label="Close navigation"
+              class="button button_icon nav__close-button"
+            >
+              <svg width="32" height="31" xmlns="http://www.w3.org/2000/svg">
+                <g fill="currentColor" fill-rule="evenodd">
+                  <path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z" />
+                  <path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z" />
+                </g>
+              </svg>
+            </button>
+            <ul role="list" class="nav__list">
+              <li class="nav__item">
+                <a href="#" class="link nav__link">Home</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="link nav__link">New</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="link nav__link">Popular</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="link nav__link">Trending</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="link nav__link">Categories</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main class="main page__main">
+        <div class="main__layout">
+          <section class="main__trend trend">
+            <picture class="trend__cover">
+              <source
+                media="(max-width: 36rem)"
+                srcset="./assets/images/image-web-3-mobile.jpg" />
+              <img
+                src="./assets/images/image-web-3-desktop.jpg"
+                alt="Article Preview Cover"
+            /></picture>
+            <h1 class="trend__title">The Bright Future of Web 3.0?</h1>
+            <p class="trend__summary">
+              We dive into the next evolution of the web that claims to put the
+              power of the platforms back into the hands of the people. But is
+              it really fulfilling its promise?
+            </p>
+            <a href="#" class="button button_primary trend__cta">Read more</a>
+          </section>
+          <aside class="aside main__new">
+            <strong class="aside__title">New</strong>
+            <ul role="list" class="new-list">
+              <li class="new-item">
+                <h2 class="new-item__title">
+                  <a href="#" class="link">Hydrogen VS Electric Cars</a>
+                </h2>
+                <p class="new-item__summary">
+                  Will hydrogen-fueled cars ever catch up to EVs?
+                </p>
+              </li>
+              <li class="new-item">
+                <h2 class="new-item__title">
+                  <a href="#" class="link">The Downsides of AI Artistry</a>
+                </h2>
+                <p class="new-item__summary">
+                  What are the possible adverse effects of on-demand AI image
+                  generation?
+                </p>
+              </li>
+              <li class="new-item">
+                <h2 class="new-item__title">
+                  <a href="#" class="link">Is VC Funding Drying Up?</a>
+                </h2>
+                <p class="new-item__summary">
+                  Private funding by VC firms is down 50% YOY. We take a look at
+                  what that means.
+                </p>
+              </li>
+            </ul>
+          </aside>
+          <section class="main__popular">
+            <ol role="list" class="popular-list">
+              <li class="popular-item">
+                <img
+                  src="./assets/images/image-retro-pcs.jpg"
+                  alt="Retro PCs"
+                  class="popular-item__cover"
+                />
+                <h2 class="popular-item__title">
+                  <a href="#" class="link">Reviving Retro PCs</a>
+                </h2>
+                <p class="popular-item__summary">
+                  What happens when old PCs are given modern upgrades?
+                </p>
+              </li>
+              <li class="popular-item">
+                <img
+                  src="./assets/images/image-top-laptops.jpg"
+                  alt="Laptop Keyboard"
+                  class="popular-item__cover"
+                />
+                <h2 class="popular-item__title">
+                  <a href="#" class="link">Top 10 Laptops of 2022</a>
+                </h2>
+                <p class="popular-item__summary">
+                  Our best picks for various needs and budgets.
+                </p>
+              </li>
+              <li class="popular-item">
+                <img
+                  src="./assets/images/image-gaming-growth.jpg"
+                  alt="Gamepad"
+                  class="popular-item__cover"
+                />
+                <h2 class="popular-item__title">
+                  <a href="#" class="link">The Growth of Gaming</a>
+                </h2>
+                <p class="popular-item__summary">
+                  How the pandemic has sparked fresh opportunities.
+                </p>
+              </li>
+            </ol>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
