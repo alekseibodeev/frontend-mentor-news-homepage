@@ -309,6 +309,17 @@ body {
   background-color: transparent;
 }
 
+.skip-to-content {
+  position: absolute;
+  top: 2rem;
+  transform: translate(-100%);
+  transition: transform var(--anim-duration) var(--anim-function);
+}
+
+.skip-to-content:focus {
+  transform: translateX(0%);
+}
+
 @media screen and (max-width: 62rem) {
   .main__layout {
     grid-template-columns: 1fr;
